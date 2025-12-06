@@ -4,7 +4,6 @@ import java.util.List;
 
 import com.unileste.projetofinal.entidades.Cliente;
 
-// Interface que define o contrato para operações de persistência do Cliente
 public interface ClienteDAO {
 
     void inserir(Cliente cliente) throws Exception;
@@ -17,6 +16,5 @@ public interface ClienteDAO {
 
     List<Cliente> listarTodos() throws Exception;
 
-    // Opcional: Adicionar método para verificar unicidade de CPF, se necessário
     boolean existeCpf(String cpf) throws Exception;
 }

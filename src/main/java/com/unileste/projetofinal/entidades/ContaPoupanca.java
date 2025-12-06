@@ -39,7 +39,6 @@ public class ContaPoupanca extends Conta {
             throw new IllegalArgumentException("O valor do saque deve ser positivo.");
         }
 
-        // Lógica da Poupança: Saque estritamente limitado ao saldo.
         if (valor > this.saldo) {
             throw new SaldoInsuficienteException("Saldo insuficiente na Conta Poupança. Saldo disponível: R$ " + this.saldo);
         }
@@ -54,10 +53,8 @@ public class ContaPoupanca extends Conta {
             throw new IllegalArgumentException("O valor da transferência deve ser positivo.");
         }
 
-        // 1. Tenta sacar da conta de origem
         sacar(valor);
 
-        // 2. Se o saque for bem-sucedido, deposita na conta de destino
         destino.depositar(valor);
 
         adicionarTransacao(LocalDateTime.now().format(FORMATTER) + " - TRANSFERÊNCIA ENVIADA para conta " + destino.getNumero() + ": -" + valor + " | Saldo Atual: " + this.saldo);

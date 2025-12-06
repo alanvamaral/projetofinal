@@ -26,7 +26,6 @@ public class Cliente {
         this(nome, cpf, endereco, null);
     }
 
-    // Getters
     public String getNome() {
         return nome;
     }
@@ -51,7 +50,6 @@ public class Cliente {
         this.id = id;
     }
 
-    // Setters (apenas para endereço)
     public void setEndereco(String endereco) {
         this.endereco = endereco;
     }
@@ -71,7 +69,7 @@ public class Cliente {
             return false;
         }
         Cliente cliente = (Cliente) obj;
-        return cpf.equals(cliente.cpf); // CPF como identificador único
+        return cpf.equals(cliente.cpf);
     }
 
     @Override

@@ -22,7 +22,6 @@ public abstract class Conta {
         this.historicoTransacoes = new ArrayList<>();
     }
 
-    // Getters
     public String getNumero() {
         return numero;
     }
@@ -39,12 +38,10 @@ public abstract class Conta {
         return historicoTransacoes;
     }
 
-    // Método auxiliar para registrar transações
     protected void adicionarTransacao(String descricao) {
         this.historicoTransacoes.add(descricao);
     }
 
-    // Métodos Abstratos - Devem ser implementados pelas subclasses
     public abstract void depositar(double valor);
 
     public abstract void sacar(double valor) throws SaldoInsuficienteException;

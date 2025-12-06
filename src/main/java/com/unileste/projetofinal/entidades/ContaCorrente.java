@@ -50,10 +50,8 @@ public class ContaCorrente extends Conta {
             throw new IllegalArgumentException("O valor da transferência deve ser positivo.");
         }
 
-        // 1. Tenta sacar da conta de origem (o saque na CC já considera o cheque especial)
         sacar(valor);
 
-        // 2. Se o saque for bem-sucedido, deposita na conta de destino
         destino.depositar(valor);
 
         adicionarTransacao(LocalDateTime.now().format(FORMATTER) + " - TRANSFERÊNCIA ENVIADA para conta " + destino.getNumero() + ": -" + valor + " | Saldo Atual: " + this.saldo);

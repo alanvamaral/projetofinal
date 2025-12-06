@@ -149,7 +149,6 @@ public class ContaDAOJdbc implements ContaDAO {
             conta = new ContaPoupanca(numero, cliente);
         }
 
-        // Define saldo atual; usa depositar somente se saldo for positivo
         if (saldo > 0) {
             conta.depositar(saldo);
         }
